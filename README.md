@@ -6,5 +6,5 @@
 + Lưu thành tựu người chơi vào Postgres Database.
 + Có thể CRUD (thêm, sửa, xóa, hiển thị) danh sách người chơi.
 
-Ngày bắt đầu: 14/01/2026
+Ngày bắt đầu: 14/01/2026 <br/>
 Ngày kết thúc: chưa rõ
