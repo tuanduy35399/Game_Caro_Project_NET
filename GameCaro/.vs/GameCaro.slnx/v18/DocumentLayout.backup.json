@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E6876A09-6799-4EA6-A455-F371F4C624B9}|GameCaro\\GameCaro.csproj|c:\\users\\duy\\desktop\\learnc#\\practice\\carogame\\game_caro_project_net\\gamecaro\\gamecaro\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6876A09-6799-4EA6-A455-F371F4C624B9}|GameCaro\\GameCaro.csproj|solutionrelative:gamecaro\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6876A09-6799-4EA6-A455-F371F4C624B9}|GameCaro\\GameCaro.csproj|c:\\users\\duy\\desktop\\learnc#\\practice\\carogame\\game_caro_project_net\\gamecaro\\gamecaro\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E6876A09-6799-4EA6-A455-F371F4C624B9}|GameCaro\\GameCaro.csproj|solutionrelative:gamecaro\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\GameCaro\\Form1.Designer.cs",
+              "RelativeDocumentMoniker": "GameCaro\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\GameCaro\\Form1.Designer.cs*",
+              "RelativeToolTip": "GameCaro\\Form1.Designer.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T15:34:35.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\GameCaro\\Form1.cs",
+              "RelativeDocumentMoniker": "GameCaro\\Form1.cs",
+              "ToolTip": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\GameCaro\\Form1.cs [Design]",
+              "RelativeToolTip": "GameCaro\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-14T15:34:10.136Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
