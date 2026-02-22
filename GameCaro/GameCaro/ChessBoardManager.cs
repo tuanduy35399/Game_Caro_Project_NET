@@ -32,6 +32,32 @@ namespace GameCaro
 
         private List<List<Button>> matrix;
 
+        private event EventHandler playerMarked;
+        public event EventHandler PlayerMarked
+        {
+            add
+            {
+                playerMarked += value;
+            }
+            remove
+            {
+                playerMarked -= value;
+            }
+
+        }
+        private event EventHandler endedGame;
+        public event EventHandler EndedGame
+        {
+            add
+            {
+                endedGame += value;
+            }
+            remove
+            {
+                endedGame -= value;
+            }
+
+        }
         #endregion
 
         #region Initialize
@@ -55,6 +81,7 @@ namespace GameCaro
         #region Methods
         public void DrawChessBar()
         {
+            ChessBoard.Enabled = true;
             matrix = new List<List<Button>>();
 
             Button oldButton = new Button()
@@ -101,15 +128,22 @@ namespace GameCaro
 
             ChangePlayer();
 
-            if(IsEndGame(btn))
+            if(playerMarked != null)
+            {
+                playerMarked(this, new EventArgs());
+            }
+            if (IsEndGame(btn))
             {
                 EndGame();
             }
         }
 
-        private void EndGame()
+        public void EndGame()
         {
-            MessageBox.Show("Ket thuc game");
+            if (endedGame != null)
+            {
+                endedGame(this, new EventArgs());
+            }
         }
 
         private bool IsEndGame(Button btn)
@@ -124,7 +158,7 @@ namespace GameCaro
 
             int vertical = Convert.ToInt32(btn.Tag);
             int horizontal = matrix[vertical].IndexOf(btn);
-             
+
             return new Point(horizontal, vertical);
         }
         private bool IsEndHorizontal(Button btn)
@@ -135,7 +169,7 @@ namespace GameCaro
             //Dem ben trai
             for (int i = point.X; i >= 0; i--)
             {
-                
+
                 if (matrix[point.Y][i].BackgroundImage == btn.BackgroundImage)
                 {
                     cntLeft++;
@@ -144,7 +178,7 @@ namespace GameCaro
             }
 
             //Dem ben phai
-            for (int i = point.X+1; i < Cons.CHESS_BOARD_WIDTH ; i++)
+            for (int i = point.X + 1; i < Cons.CHESS_BOARD_WIDTH; i++)
             {
 
                 if (matrix[point.Y][i].BackgroundImage == btn.BackgroundImage)
@@ -153,7 +187,7 @@ namespace GameCaro
                 }
                 else break;
             }
-            return cntLeft+ cntRight==5;
+            return cntLeft + cntRight == 5;
         }
         private bool IsEndVertical(Button btn)
         {

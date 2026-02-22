@@ -28,19 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelChessBoard = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBoxAvatar = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtBoxPlayerName = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnLAN = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtBoxIP = new System.Windows.Forms.TextBox();
-            this.progressBarOfPlayer = new System.Windows.Forms.ProgressBar();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.pictureBoxMark = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.progressBarOfPlayer = new System.Windows.Forms.ProgressBar();
+            this.txtBoxIP = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnLAN = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtBoxPlayerName = new System.Windows.Forms.TextBox();
+            this.timerCoolDown = new System.Windows.Forms.Timer(this.components);
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxAvatar)).BeginInit();
             this.panel3.SuspendLayout();
@@ -62,6 +64,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 198);
             this.panel2.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe Print", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(42, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(116, 58);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Ca ro";
             // 
             // pictureBoxAvatar
             // 
@@ -88,53 +100,14 @@
             this.panel3.Size = new System.Drawing.Size(301, 527);
             this.panel3.TabIndex = 2;
             // 
-            // txtBoxPlayerName
+            // pictureBoxMark
             // 
-            this.txtBoxPlayerName.Location = new System.Drawing.Point(82, 28);
-            this.txtBoxPlayerName.Name = "txtBoxPlayerName";
-            this.txtBoxPlayerName.Size = new System.Drawing.Size(213, 22);
-            this.txtBoxPlayerName.TabIndex = 0;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Player";
-            // 
-            // btnLAN
-            // 
-            this.btnLAN.Location = new System.Drawing.Point(82, 117);
-            this.btnLAN.Name = "btnLAN";
-            this.btnLAN.Size = new System.Drawing.Size(85, 29);
-            this.btnLAN.TabIndex = 2;
-            this.btnLAN.Text = "Connect";
-            this.btnLAN.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "IP Address";
-            // 
-            // txtBoxIP
-            // 
-            this.txtBoxIP.Location = new System.Drawing.Point(82, 75);
-            this.txtBoxIP.Name = "txtBoxIP";
-            this.txtBoxIP.Size = new System.Drawing.Size(213, 22);
-            this.txtBoxIP.TabIndex = 4;
-            // 
-            // progressBarOfPlayer
-            // 
-            this.progressBarOfPlayer.Location = new System.Drawing.Point(6, 191);
-            this.progressBarOfPlayer.Name = "progressBarOfPlayer";
-            this.progressBarOfPlayer.Size = new System.Drawing.Size(289, 23);
-            this.progressBarOfPlayer.TabIndex = 5;
+            this.pictureBoxMark.Location = new System.Drawing.Point(54, 271);
+            this.pictureBoxMark.Name = "pictureBoxMark";
+            this.pictureBoxMark.Size = new System.Drawing.Size(200, 200);
+            this.pictureBoxMark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxMark.TabIndex = 7;
+            this.pictureBoxMark.TabStop = false;
             // 
             // label3
             // 
@@ -145,24 +118,57 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Progress";
             // 
-            // label4
+            // progressBarOfPlayer
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe Print", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(42, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 61);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Ca ro";
+            this.progressBarOfPlayer.Location = new System.Drawing.Point(6, 191);
+            this.progressBarOfPlayer.Name = "progressBarOfPlayer";
+            this.progressBarOfPlayer.Size = new System.Drawing.Size(289, 23);
+            this.progressBarOfPlayer.TabIndex = 5;
             // 
-            // pictureBoxMark
+            // txtBoxIP
             // 
-            this.pictureBoxMark.Location = new System.Drawing.Point(54, 271);
-            this.pictureBoxMark.Name = "pictureBoxMark";
-            this.pictureBoxMark.Size = new System.Drawing.Size(200, 200);
-            this.pictureBoxMark.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxMark.TabIndex = 7;
-            this.pictureBoxMark.TabStop = false;
+            this.txtBoxIP.Location = new System.Drawing.Point(82, 75);
+            this.txtBoxIP.Name = "txtBoxIP";
+            this.txtBoxIP.Size = new System.Drawing.Size(213, 22);
+            this.txtBoxIP.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(73, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "IP Address";
+            // 
+            // btnLAN
+            // 
+            this.btnLAN.Location = new System.Drawing.Point(82, 117);
+            this.btnLAN.Name = "btnLAN";
+            this.btnLAN.Size = new System.Drawing.Size(85, 29);
+            this.btnLAN.TabIndex = 2;
+            this.btnLAN.Text = "Connect";
+            this.btnLAN.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(3, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Player";
+            // 
+            // txtBoxPlayerName
+            // 
+            this.txtBoxPlayerName.Location = new System.Drawing.Point(82, 28);
+            this.txtBoxPlayerName.Name = "txtBoxPlayerName";
+            this.txtBoxPlayerName.Size = new System.Drawing.Size(213, 22);
+            this.txtBoxPlayerName.TabIndex = 0;
+            // 
+            // timerCoolDown
+            // 
+            this.timerCoolDown.Tick += new System.EventHandler(this.timerCoolDown_Tick);
             // 
             // Form1
             // 
@@ -199,6 +205,7 @@
         private System.Windows.Forms.ProgressBar progressBarOfPlayer;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox pictureBoxMark;
+        private System.Windows.Forms.Timer timerCoolDown;
     }
 }
 
