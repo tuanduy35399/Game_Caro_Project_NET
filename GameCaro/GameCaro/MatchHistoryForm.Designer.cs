@@ -2,12 +2,12 @@
 
 namespace GameCaro
 {
-    partial class MatchHistoryForm
+    public partial class MatchHistoryForm : System.Windows.Forms.Form
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.DataGridView dgvHistory;
 
-        protected override void Dispose(bool disposing)
+        protected override void Dispose(bool disposing) 
         {
             if (disposing && (components != null))
             {

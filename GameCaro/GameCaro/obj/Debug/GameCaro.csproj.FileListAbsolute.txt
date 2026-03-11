@@ -7,7 +7,6 @@ C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\Ga
 C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\obj\Debug\GameCaro.csproj.CoreCompileInputs.cache
 C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\obj\Debug\GameCaro.exe
 C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\obj\Debug\GameCaro.pdb
-C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\obj\Debug\GameCaro.UserModel.resources
 C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\bin\Debug\DnsClient.dll
 C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
@@ -44,3 +43,4 @@ C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\Ga
 C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\obj\Debug\GameCaro.csproj.Up2Date
 C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\obj\Debug\GameCaro.Form1.resources
+C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\bin\Debug\App.config

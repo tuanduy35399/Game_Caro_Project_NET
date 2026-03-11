@@ -1,6 +1,11 @@
-﻿using System;
+﻿using GameCaro.Models;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -8,11 +13,7 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MongoDB.Bson;
-using MongoDB.Bson.Serialization.Attributes;
-using MongoDB.Driver;
-using System.Configuration;
-using GameCaro.Models;
+using System.Xml.Linq;
 
 namespace GameCaro
 {
@@ -48,14 +49,38 @@ namespace GameCaro
                 progressBarOfPlayer.Maximum = Cons.COOL_DOWN_TIME;
                 timerCoolDown.Interval = Cons.COOL_DOWN_INTERVAL;
 
+                // Read configuration using ConfigurationManager (more reliable than XDocument)
                 string connectionString = ConfigurationManager.AppSettings["MongoConnectionString"];
-                string databaseName = ConfigurationManager.AppSettings["MongoDatabaseName"];
+                string databaseName = ConfigurationManager.AppSettings["MongoDatabaseName"] ?? "CaroData";
 
-                if (string.IsNullOrWhiteSpace(connectionString) || connectionString.Contains("<db_password>"))
+                // Validate connection string
+                if (string.IsNullOrWhiteSpace(connectionString))
                 {
                     MessageBox.Show(
-                        "Hãy mở App.config và thay <db_password> bằng mật khẩu MongoDB Atlas thật của bạn.",
-                        "Thiếu cấu hình MongoDB",
+                        "MongoDB connection string is missing from App.config. Please add it.",
+                        "Configuration Error",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                    _forceClose = true;
+                    Close();
+                    return;
+                }
+
+                // Check for placeholder passwords
+                if (connectionString.Contains("<db_password>") || 
+                    connectionString.Contains("<password>") ||
+                    connectionString.Contains("PASS") ||
+                    connectionString.Contains("PASSWORD"))
+                {
+                    MessageBox.Show(
+                        "MongoDB connection string contains placeholder credentials.\n\n" +
+                        "Please open App.config and replace the placeholder with your actual " +
+                        "MongoDB Atlas credentials (username and password).\n\n" +
+                        "You can find your connection string in MongoDB Atlas:\n" +
+                        "1. Log in to https://cloud.mongodb.com\n" +
+                        "2. Go to Clusters → Connect → Drivers\n" +
+                        "3. Copy the connection string",
+                        "Invalid Configuration",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Warning);
                     _forceClose = true;
@@ -73,8 +98,8 @@ namespace GameCaro
                 if (!connectionResult.Success)
                 {
                     MessageBox.Show(
-                        "Không thể kết nối tới MongoDB Atlas.\n\nChi tiết: " + connectionResult.ErrorMessage,
-                        "Lỗi kết nối",
+                        "MongoDB connection failed.\n\n" + connectionResult.ErrorMessage,
+                        "Connection Error",
                         MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
                     _forceClose = true;

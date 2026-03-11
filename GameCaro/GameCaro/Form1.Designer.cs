@@ -271,5 +271,6 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+    }
 }
 

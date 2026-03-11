@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GameCaro.Models
 {
-    internal class MatchHistoryModel
+    public class MatchHistoryModel
     {
         [BsonId]
         public ObjectId Id { get; set; }

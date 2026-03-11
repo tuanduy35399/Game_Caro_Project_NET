@@ -1,6 +1,6 @@
 ﻿namespace GameCaro
 {
-    public class TopScoresForm
+    public partial class TopScoresForm : System.Windows.Forms.Form
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.DataGridView dgvTopScores;
@@ -49,4 +49,5 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTopScores)).EndInit();
             this.ResumeLayout(false);
         }
+    }
 }

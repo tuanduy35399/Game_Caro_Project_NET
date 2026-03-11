@@ -6,30 +6,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GameCaro.Model
+namespace GameCaro.Models
 {
-    internal class UserModel
+    public class UserModel
     {
-            [BsonId]
-            public ObjectId Id { get; set; }
+        [BsonId]
+        public ObjectId Id { get; set; }
 
-            [BsonElement("username")]
-            public string Username { get; set; }
+        [BsonElement("username")]
+        public string Username { get; set; }
 
-            [BsonElement("passwordHash")]
-            public string PasswordHash { get; set; }
+        [BsonElement("passwordHash")]
+        public string PasswordHash { get; set; }
 
-            [BsonElement("score")]
-            public int Score { get; set; }
+        [BsonElement("score")]
+        public int Score { get; set; }
 
-            [BsonElement("totalGames")]
-            public int TotalGames { get; set; }
+        [BsonElement("totalGames")]
+        public int TotalGames { get; set; }
 
-            [BsonElement("createdAtUtc")]
-            public DateTime CreatedAtUtc { get; set; }
+        [BsonElement("createdAtUtc")]
+        public DateTime CreatedAtUtc { get; set; }
 
-            [BsonElement("lastLoginAtUtc")]
-            [BsonIgnoreIfNull]
-            public DateTime? LastLoginAtUtc { get; set; }
-        }
+        [BsonElement("lastLoginAtUtc")]
+        [BsonIgnoreIfNull]
+        public DateTime? LastLoginAtUtc { get; set; }
     }
+}

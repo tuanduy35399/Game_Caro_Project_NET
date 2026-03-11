@@ -8,7 +8,7 @@ using GameCaro.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
 
-namespace GameCaro
+namespace GameCaro.Models
 {
     public class ServiceResult
     {
@@ -40,8 +40,14 @@ namespace GameCaro
 
         public MongoService(string connectionString, string databaseName)
         {
+            ValidateConnectionString(connectionString);
+            
             var url = new MongoUrl(connectionString);
             var settings = MongoClientSettings.FromUrl(url);
+            
+            // MongoDB driver will automatically negotiate the best authentication mechanism
+            // Do not force SCRAM-SHA-1 or SCRAM-SHA-256 - let MongoDB Atlas handle it
+            
             settings.ServerSelectionTimeout = TimeSpan.FromSeconds(5);
             settings.ConnectTimeout = TimeSpan.FromSeconds(5);
             settings.RetryReads = true;
@@ -51,6 +57,33 @@ namespace GameCaro
             _database = client.GetDatabase(databaseName);
             _users = _database.GetCollection<UserModel>("users");
             _matches = _database.GetCollection<MatchHistoryModel>("matches");
+        }
+
+        private static void ValidateConnectionString(string connectionString)
+        {
+            if (string.IsNullOrWhiteSpace(connectionString))
+            {
+                throw new ArgumentException("MongoDB connection string is empty or null.");
+            }
+
+            // Detect placeholder passwords
+            if (connectionString.Contains("<db_password>") || 
+                connectionString.Contains("<password>") ||
+                connectionString.Contains("PASS") ||
+                connectionString.Contains("PASSWORD"))
+            {
+                throw new ArgumentException(
+                    "MongoDB connection string contains placeholder credentials. " +
+                    "Please update App.config with your actual MongoDB Atlas credentials.");
+            }
+
+            // Basic format validation
+            if (!connectionString.StartsWith("mongodb+srv://") && !connectionString.StartsWith("mongodb://"))
+            {
+                throw new ArgumentException(
+                    "MongoDB connection string must start with 'mongodb://' or 'mongodb+srv://'. " +
+                    "Current format appears invalid.");
+            }
         }
 
         public static string HashPassword(string password)
@@ -71,9 +104,29 @@ namespace GameCaro
                 await EnsureIndexesAsync();
                 return ServiceResult.Ok();
             }
+            catch (MongoAuthenticationException authEx)
+            {
+                return ServiceResult.Fail(
+                    "MongoDB authentication failed. Please verify your credentials in App.config. " +
+                    "Details: " + authEx.Message);
+            }
+            catch (MongoConnectionException connEx)
+            {
+                return ServiceResult.Fail(
+                    "Cannot connect to MongoDB Atlas. " +
+                    "Possible causes: invalid IP whitelist, incorrect connection string, or cluster not running. " +
+                    "Details: " + connEx.Message);
+            }
+            catch (TimeoutException timeoutEx)
+            {
+                return ServiceResult.Fail(
+                    "MongoDB connection timeout. Check your network and IP whitelist in MongoDB Atlas. " +
+                    "Details: " + timeoutEx.Message);
+            }
             catch (Exception ex)
             {
-                return ServiceResult.Fail(ex.Message);
+                return ServiceResult.Fail(
+                    "MongoDB connection error: " + ex.GetType().Name + " - " + ex.Message);
             }
         }
 

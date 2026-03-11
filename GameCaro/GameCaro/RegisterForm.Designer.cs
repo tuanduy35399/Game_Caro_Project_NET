@@ -1,6 +1,6 @@
 ﻿namespace GameCaro
 {
-    public class RegisterForm
+    public partial class RegisterForm : System.Windows.Forms.Form
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Label label1;
@@ -137,4 +137,5 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+    }
 }

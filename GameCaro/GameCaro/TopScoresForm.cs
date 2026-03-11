@@ -1,5 +1,4 @@
-﻿using GameCaro.Model;
-using GameCaro.Models;
+﻿using GameCaro.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;

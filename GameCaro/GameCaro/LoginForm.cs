@@ -1,4 +1,5 @@
-ï»¿using System;
+using System;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using GameCaro.Models;
 
@@ -6,61 +7,100 @@ namespace GameCaro
 {
     public partial class LoginForm : Form
     {
-        private readonly MongoService _mongoService;
+        private readonly MongoService _mongo;
 
         public UserModel LoggedInUser { get; private set; }
 
-        public LoginForm(MongoService mongoService)
+        public LoginForm(MongoService mongo)
         {
-            _mongoService = mongoService;
+            _mongo = mongo ?? throw new ArgumentNullException(nameof(mongo));
             InitializeComponent();
         }
 
-        private async void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            lblStatus.Text = string.Empty;
-            ToggleUi(false);
-
-            try
-            {
-                var result = await _mongoService.AuthenticateAsync(txtUsername.Text.Trim(), txtPassword.Text);
-                if (!result.Success)
-                {
-                    lblStatus.Text = result.ErrorMessage;
-                    return;
-                }
-
-                LoggedInUser = result.User;
-                DialogResult = DialogResult.OK;
-                Close();
-            }
-            finally
-            {
-                ToggleUi(true);
-            }
+            BtnLogin_Click(sender, e);
         }
 
         private void btnOpenRegister_Click(object sender, EventArgs e)
         {
-            using (var registerForm = new RegisterForm(_mongoService))
-            {
-                registerForm.ShowDialog(this);
-            }
+            BtnRegister_Click(sender, e);
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.Cancel;
-            Close();
+            this.Close();
         }
 
-        private void ToggleUi(bool enabled)
+        private async void BtnLogin_Click(object sender, EventArgs e)
         {
-            txtUsername.Enabled = enabled;
-            txtPassword.Enabled = enabled;
-            btnLogin.Enabled = enabled;
-            btnOpenRegister.Enabled = enabled;
-            btnExit.Enabled = enabled;
+            lblStatus.Text = "";
+            string user = txtUsername.Text.Trim();
+            string pass = txtPassword.Text;
+            if (string.IsNullOrWhiteSpace(user))
+            {
+                lblStatus.Text = "Vui lòng nh?p tên ??ng nh?p.";
+                return;
+            }
+
+            try
+            {
+                var authResult = await _mongo.AuthenticateAsync(user, pass);
+                if (authResult.Success)
+                {
+                    LoggedInUser = authResult.User;
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    lblStatus.Text = authResult.ErrorMessage ?? "Tên ??ng nh?p ho?c m?t kh?u không ?úng.";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblStatus.Text = "L?i: " + ex.Message;
+            }
+        }
+
+        private async void BtnRegister_Click(object sender, EventArgs e)
+        {
+            lblStatus.Text = "";
+            string user = txtUsername.Text.Trim();
+            string pass = txtPassword.Text;
+            if (string.IsNullOrWhiteSpace(user))
+            {
+                lblStatus.Text = "Vui lòng nh?p tên ??ng nh?p.";
+                return;
+            }
+
+            try
+            {
+                var result = await _mongo.RegisterAsync(user, pass);
+                if (result.Success)
+                {
+                    // After registration, authenticate to get the user model
+                    var authResult = await _mongo.AuthenticateAsync(user, pass);
+                    if (authResult.Success)
+                    {
+                        LoggedInUser = authResult.User;
+                        this.DialogResult = DialogResult.OK;
+                        this.Close();
+                    }
+                    else
+                    {
+                        lblStatus.Text = authResult.ErrorMessage ?? "??ng nh?p th?t b?i sau khi ??ng ký.";
+                    }
+                }
+                else
+                {
+                    lblStatus.Text = result.ErrorMessage ?? "??ng ký th?t b?i.";
+                }
+            }
+            catch (Exception ex)
+            {
+                lblStatus.Text = "L?i: " + ex.Message;
+            }
         }
     }
 }

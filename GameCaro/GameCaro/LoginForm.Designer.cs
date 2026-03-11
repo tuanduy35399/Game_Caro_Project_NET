@@ -1,6 +1,6 @@
-﻿namespace GameCaro
+namespace GameCaro
 {
-    public class LoginForm
+    public partial class LoginForm
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.Label label1;
@@ -40,7 +40,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 16);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Tên đăng nhập";
+            this.label1.Text = "T�n ??ng nh?p";
             // 
             // label2
             // 
@@ -49,7 +49,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 16);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Mật khẩu";
+            this.label2.Text = "M?t kh?u";
             // 
             // txtUsername
             // 
@@ -72,7 +72,7 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(98, 32);
             this.btnLogin.TabIndex = 2;
-            this.btnLogin.Text = "Đăng nhập";
+            this.btnLogin.Text = "??ng nh?p";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -82,7 +82,7 @@
             this.btnOpenRegister.Name = "btnOpenRegister";
             this.btnOpenRegister.Size = new System.Drawing.Size(98, 32);
             this.btnOpenRegister.TabIndex = 3;
-            this.btnOpenRegister.Text = "Đăng ký";
+            this.btnOpenRegister.Text = "??ng k�";
             this.btnOpenRegister.UseVisualStyleBackColor = true;
             this.btnOpenRegister.Click += new System.EventHandler(this.btnOpenRegister_Click);
             // 
@@ -92,7 +92,7 @@
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(98, 32);
             this.btnExit.TabIndex = 4;
-            this.btnExit.Text = "Thoát";
+            this.btnExit.Text = "Tho�t";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -123,9 +123,9 @@
             this.MinimizeBox = false;
             this.Name = "LoginForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Đăng nhập";
+            this.Text = "??ng nh?p";
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
     }
+}
