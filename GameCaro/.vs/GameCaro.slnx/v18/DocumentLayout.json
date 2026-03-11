@@ -1,12 +1,86 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E6876A09-6799-4EA6-A455-F371F4C624B9}|GameCaro\\GameCaro.csproj|c:\\users\\duy\\desktop\\learnc#\\practice\\carogame\\game_caro_project_net\\gamecaro\\gamecaro\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6876A09-6799-4EA6-A455-F371F4C624B9}|GameCaro\\GameCaro.csproj|solutionrelative:gamecaro\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6876A09-6799-4EA6-A455-F371F4C624B9}|GameCaro\\GameCaro.csproj|C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\gamecaro\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E6876A09-6799-4EA6-A455-F371F4C624B9}|GameCaro\\GameCaro.csproj|solutionrelative:gamecaro\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6876A09-6799-4EA6-A455-F371F4C624B9}|GameCaro\\GameCaro.csproj|C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\gamecaro\\models\\mongoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6876A09-6799-4EA6-A455-F371F4C624B9}|GameCaro\\GameCaro.csproj|solutionrelative:gamecaro\\models\\mongoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E6876A09-6799-4EA6-A455-F371F4C624B9}|GameCaro\\GameCaro.csproj|C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\gamecaro\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E6876A09-6799-4EA6-A455-F371F4C624B9}|GameCaro\\GameCaro.csproj|solutionrelative:gamecaro\\loginform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\GameCaro\\Form1.cs",
+              "RelativeDocumentMoniker": "GameCaro\\Form1.cs",
+              "ToolTip": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\GameCaro\\Form1.cs",
+              "RelativeToolTip": "GameCaro\\Form1.cs",
+              "ViewState": "AgIAAFEBAAAAAAAAAAAUwFkBAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T08:27:28.937Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MongoService.cs",
+              "DocumentMoniker": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\GameCaro\\Models\\MongoService.cs",
+              "RelativeDocumentMoniker": "GameCaro\\Models\\MongoService.cs",
+              "ToolTip": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\GameCaro\\Models\\MongoService.cs",
+              "RelativeToolTip": "GameCaro\\Models\\MongoService.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T08:27:01.537Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\GameCaro\\App.config",
+              "RelativeDocumentMoniker": "GameCaro\\App.config",
+              "ToolTip": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\GameCaro\\App.config",
+              "RelativeToolTip": "GameCaro\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAABPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-03-11T08:24:49.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\GameCaro\\LoginForm.Designer.cs",
+              "RelativeDocumentMoniker": "GameCaro\\LoginForm.Designer.cs",
+              "ToolTip": "C:\\Users\\Duy\\Desktop\\LearnC#\\Practice\\CaroGame\\Game_Caro_Project_NET\\GameCaro\\GameCaro\\LoginForm.Designer.cs",
+              "RelativeToolTip": "GameCaro\\LoginForm.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001384|",
+              "WhenOpened": "2026-03-11T08:24:24.572Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

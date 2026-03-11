@@ -44,3 +44,5 @@ C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\Ga
 C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\obj\Debug\GameCaro.csproj.Up2Date
 C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\obj\Debug\GameCaro.Form1.resources
 C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\bin\Debug\App.config
+C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\bin\Debug\System.Configuration.ConfigurationManager.dll
+C:\Users\Duy\Desktop\LearnC#\Practice\CaroGame\Game_Caro_Project_NET\GameCaro\GameCaro\bin\Debug\System.Configuration.ConfigurationManager.xml
