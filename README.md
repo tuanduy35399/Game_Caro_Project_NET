@@ -7,4 +7,4 @@
 + Có thể CRUD (thêm, sửa, xóa, hiển thị) danh sách người chơi.
 
 Ngày bắt đầu: 14/01/2026 <br/>
-Ngày kết thúc: chưa rõ
+Ngày kết thúc: 16/03/2026
